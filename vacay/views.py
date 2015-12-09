@@ -3,7 +3,7 @@ from .models import UserVacay
 from .forms import AddForm
 
 def home(request):
-    user_vacay = UserVacay.objects.filter(user=request.user)
+    user_vacay = UserVacay.objects.all()
     return render(request, 'vacay/home.html', {'user_vacay': user_vacay})
     
 def add(request):
