@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.models import User
 from .models import UserVacay
 from .forms import AddForm
 
 def home(request):
-    user_vacay = UserVacay.objects.all()
+    u = User.objects.filter(username='jing')
+    user_vacay = UserVacay.objects.filter(user=u)
     return render(request, 'vacay/home.html', {'user_vacay': user_vacay})
     
 def add(request):
