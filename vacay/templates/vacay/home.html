@@ -2,11 +2,7 @@
 
 {% block content %}
 {% for user in user_vacay %}
-    <p>Days away: {{ user.days_away }}</p>
-    <p>Days here: {{ user.days_here }}</p>
-    <p>Accrued days apart: {{ user.vacay_days }}</p>
+    <h1>Days here: {{ user.days_here }} <a href="{% url 'add' %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
+    <h1>Accrued days apart: {{ user.vacay_days }}</h1>
 {% endfor %}
-<div>
-    <h1>Add day <a href="{% url 'add' %}"><span class="glyphicon glyphicon-plus"></span></a></h1>
-</div>
 {% endblock %}
